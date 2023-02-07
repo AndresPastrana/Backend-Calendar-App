@@ -1,8 +1,8 @@
 Arguments: 
-  /home/andres-lnx/.nvm/versions/node/v16.17.0/bin/node /home/andres-lnx/.yarn/bin/yarn.js add dotenv --dev
+  /home/andres-lnx/.nvm/versions/node/v16.17.0/bin/node /home/andres-lnx/.yarn/bin/yarn.js add cors
 
 PATH: 
-  /home/andres-lnx/.pyenv/shims:/home/andres-lnx/.yarn/bin:/home/andres-lnx/.config/yarn/global/node_modules/.bin:/home/andres-lnx/.local/bin:/home/andres-lnx/.pyenv/bin:/home/andres-lnx/.local/bin:/home/andres-lnx/.yarn/bin:/home/andres-lnx/.config/yarn/global/node_modules/.bin:/home/andres-lnx/.local/bin:/home/andres-lnx/.pyenv/bin:/home/andres-lnx/.nvm/versions/node/v16.17.0/bin:/home/andres-lnx/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/sbin:/usr/games:/usr/local/games:/snap/bin:/home/andres-lnx/Documentos:/home/andres-lnx/.pyenv/bin:/snap/bin
+  /home/andres-lnx/.pyenv/shims:/home/andres-lnx/.yarn/bin:/home/andres-lnx/.config/yarn/global/node_modules/.bin:/home/andres-lnx/.local/bin:/home/andres-lnx/.pyenv/bin:/home/andres-lnx/.yarn/bin:/home/andres-lnx/.config/yarn/global/node_modules/.bin:/home/andres-lnx/.local/bin:/home/andres-lnx/.pyenv/bin:/home/andres-lnx/.nvm/versions/node/v16.17.0/bin:/home/andres-lnx/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/sbin:/usr/games:/usr/local/games:/snap/bin:/home/andres-lnx/Documentos:/home/andres-lnx/.pyenv/bin:/snap/bin
 
 Yarn version: 
   1.22.19
@@ -14,10 +14,8 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/dotenv: ETIMEDOUT
-      at Timeout._onTimeout (/home/andres-lnx/.yarn/lib/cli.js:141550:19)
-      at listOnTimeout (node:internal/timers:559:17)
-      at processTimers (node:internal/timers:502:7)
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:109:26)
 
 npm manifest: 
   {
@@ -30,8 +28,9 @@ npm manifest:
     },
     "dependencies": {
       "bcrypt": "^5.1.0",
+      "dotenv": "^16.0.3",
       "express": "^4.18.2",
-      "mongoose": "^6.8.4"
+      "mongoose": "^6.9.0"
     },
     "devDependencies": {
       "morgan": "^1.10.0",
@@ -1072,6 +1071,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-2.0.1.tgz#e1897aa88fa6ad197862937fbc0441ef352ee0cd"
     integrity sha512-463v3ZeIrcWtdgIg6vI6XUncguvr2TnGl4SzDXinkt9mSLpBJKXT3mW6xT3VQdDN11+WVs29pgvivTc4Lp8v+w==
   
+  dotenv@^16.0.3:
+    version "16.0.3"
+    resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.3.tgz#115aec42bac5053db3c456db30cc243a5a836a07"
+    integrity sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==
+  
   ee-first@1.1.1:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
@@ -1444,10 +1448,10 @@ Lockfile:
       "@types/whatwg-url" "^8.2.1"
       whatwg-url "^11.0.0"
   
-  mongodb@4.12.1:
-    version "4.12.1"
-    resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-4.12.1.tgz#224eb39b8784af835b515aa687c6010cecaabb1a"
-    integrity sha512-koT87tecZmxPKtxRQD8hCKfn+ockEL2xBiUvx3isQGI6mFmagWt4f4AyCE9J4sKepnLhMacoCTQQA6SLAI2L6w==
+  mongodb@4.13.0:
+    version "4.13.0"
+    resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-4.13.0.tgz#2aa832b827e2891eb2e52e8235c201cbb4701ed2"
+    integrity sha512-+taZ/bV8d1pYuHL4U+gSwkhmDrwkWbH1l4aah4YpmpscMwgFBkufIKxgP/G7m87/NUuQzc2Z75ZTI7ZOyqZLbw==
     dependencies:
       bson "^4.7.0"
       mongodb-connection-string-url "^2.5.4"
@@ -1456,14 +1460,14 @@ Lockfile:
       "@aws-sdk/credential-providers" "^3.186.0"
       saslprep "^1.0.3"
   
-  mongoose@^6.8.4:
-    version "6.8.4"
-    resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-6.8.4.tgz#f27ec3eca6df3ebb2df1f43623f4cd88744ca9a8"
-    integrity sha512-19Jk2hbSAPcM4u6ErW0UPwaSO2YfP/cXfBS9YEiNgNzZfXd+jkyemqJ+t2aflaicXeU4VdTP33pZYxqjk2hUYw==
+  mongoose@^6.9.0:
+    version "6.9.0"
+    resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-6.9.0.tgz#cfc5acb2e4aa8188eb248e98a920a829ffcc273d"
+    integrity sha512-5tu6+trwjk5TIH6b6iYgAwmzZ0RNOxFoqXQb9h21Oi45DeM1rWM/niHxJ4ROqBISDfQMwRvLSABHTsyn3AzoFQ==
     dependencies:
       bson "^4.7.0"
       kareem "2.5.1"
-      mongodb "4.12.1"
+      mongodb "4.13.0"
       mpath "0.9.0"
       mquery "4.0.3"
       ms "2.1.3"

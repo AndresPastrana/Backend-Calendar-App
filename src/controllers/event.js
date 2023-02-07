@@ -1,28 +1,28 @@
-const getAllProviders = (req, resp) => {
+const getAllEvents = (req, resp) => {
   return resp.json({
     msg: "getAllProviders OK",
   });
 };
-const getOneProvider = (req, resp) => {
+const getOneEvent = (req, resp) => {
   return resp.json({
     msg: "getOneProvider OK",
   });
 };
 
-const postProvider = (req, resp) => {
+const insertEvent = (req, resp) => {
   const provider = req.body;
   return resp.json({
     msg: "postProvider OK",
   });
 };
-const deleteProvider = (req, resp) => {
+const deleteEvent = (req, resp) => {
   const { id } = req.params;
   return resp.json({
     msg: "deleteProvider OK",
   });
 };
 
-const updateProvider = (req, resp) => {
+const updateEvent = (req, resp) => {
   const { id } = req.params;
   const updatedProvider = req.body;
   return resp.json({
@@ -31,9 +31,9 @@ const updateProvider = (req, resp) => {
 };
 
 module.exports = {
-  getAllProviders,
-  getOneProvider,
-  postProvider,
-  deleteProvider,
-  updateProvider,
+  getAllEvents,
+  getOneEvent,
+  insertEvent,
+  updateEvent,
+  deleteEvent,
 };
