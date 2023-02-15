@@ -103,12 +103,16 @@ const updateEvent = async (req, resp) => {
       });
     }
 
-    const updatedEvent = await Event.updateOne({ _id }, { ...req.body });
+    const updatedEvent = await Event.findByIdAndUpdate(
+      _id,
+      { ...req.body },
+      { new: true }
+    ).populate("user", "username");
 
     console.log(updatedEvent);
     return resp.json({
       ok: true,
-      data: { id: _id, ...req.body, user: uid },
+      data: updatedEvent,
     });
   } catch (error) {
     console.log(error);
