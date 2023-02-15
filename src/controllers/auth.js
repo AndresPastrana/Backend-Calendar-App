@@ -114,8 +114,26 @@ const refresh = async (req = request, resp = response) => {
   }
 };
 
+const getUsers = async (req = request, resp = response) => {
+  try {
+    const users = await User.find();
+    return resp.json({
+      ok: true,
+      data: users,
+    });
+  } catch (error) {
+    console.log(error);
+    return resp.status(500).json({
+      ok: false,
+      data: null,
+      error,
+    });
+  }
+};
+
 module.exports = {
   login,
   register,
   refresh,
+  getUsers,
 };

@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { login, register, refresh } = require("../controllers/auth");
+const { login, register, refresh, getUsers } = require("../controllers/auth");
 const { check, header } = require("express-validator");
 const { fieldsValid } = require("../middlewares/fieldsValid");
 const { validartoken } = require("../middlewares/validar-token");
@@ -39,4 +39,5 @@ router.post(
   register
 );
 
+router.get("/users", getUsers);
 module.exports = router;
